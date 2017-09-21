@@ -3,19 +3,11 @@ def squared_sum(a, b)
 end
 
 def sort_array_plus_one(a)
-  b = a.sort
-  b.each do |i|
-    i = i + 1
-  end
-  b
+  a.sort.map!{|a| a += 1}
 end
 
 def combine_name(first_name, last_name)
-  result = nil
-  (0...(last_name.length)).each do |idx|
-    break result = first_name + last_name[(idx + 1)..-1] if first_name.end_with?(last_name[0..idx])
-  end
-  result
+  first_name + " " + last_name
 end
 
 def blockin_time(a)
